@@ -1,0 +1,11 @@
+<!-- app/views/products/show.html.erb -->
+
+<h1><%= @product.name %></h1>
+
+<p><%= @product.description %></p>
+<p>Prix : <%= number_to_currency(@product.price) %></p>
+<p>Stock disponible : <%= @product.stock %></p>
+
+<%= link_to 'Modifier', edit_product_path(@product) %> |
+<%= link_to 'Supprimer', @product, method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %> |
+<%= link_to 'Retour à la liste des produits', products_path %>

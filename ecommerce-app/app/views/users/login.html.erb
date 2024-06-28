@@ -1,0 +1,28 @@
+<h1>Connexion</h1>
+
+<%= form_with(model: @user, url: login_path) do |form| %>
+  <% if flash[:alert] %>
+    <div class="alert alert-danger">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Connexion' %>
+  </div>
+<% end %>
+<br/>
+
+<div> Vous n'avez pas de comptes ? </div>
+
+<%= link_to "Je crée mon compte", "/signup" %>

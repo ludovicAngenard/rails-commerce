@@ -1,0 +1,8 @@
+<!-- app/views/products/edit.html.erb -->
+
+<h1>Modifier <%= @product.name %></h1>
+
+<%= render 'form', product: @product %>
+
+<%= link_to 'Afficher', @product %> |
+<%= link_to 'Retour à la liste des produits', products_path %>
